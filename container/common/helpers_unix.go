@@ -32,7 +32,7 @@ func listDirectories(dirpath string, parent string, recursive bool, output map[s
 			nbuf, errno = syscall.ReadDirent(fd, buf)
 			runtime.KeepAlive(f)
 			if errno != nil {
-				return os.NewSyscallError("readdirs", errno)
+				return os.NewSyscallError("readdirent", errno)
 			}
 			if nbuf <= 0 {
 				break
